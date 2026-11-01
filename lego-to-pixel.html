@@ -4,13 +4,31 @@
   <meta charset="utf-8">
   <title>LEGO to pixel</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 <body>
   <head>
-    <h1>Bienvenue sur le convertisseur (V1)</h1>
+    <h1>LEGO to pixel</h1>
   </head>
+
+  <section class="version">
+    <h2> Bienvenue sur le convertisseur (V1)</h2>
+  </section>
+  
   <section class="mesures">
+    
+    <p name="val">Entrez ici la valeur en cm
+      <input type="text" id="valeur" name="valeur" placeholder="valeur" />
+      <br>
+      <br>
+      <button id="convertir" name="convertir">Convertir</button>
+
+    </p>
+
+
+    <p name="res">Résultat en pixel
+      <input type="text" id="resultat" name="resultat" placeholder="résultat" readonly />
+    </p>
+
 
   </section>
   <section class = "resultat">
@@ -19,7 +37,9 @@
   <footer>
     Site créé par Max 2.0
     <br>
-    Vous pouvez retrouver mes autre projets <a href="https://github.com/Max-2-0?tab=repositories">ici</a>
+    Vous pouvez retrouver mes autres projets
+    <a href="https://github.com/Max-2-0?tab=repositories">Voir tous mes projets</a>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

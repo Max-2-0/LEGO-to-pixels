@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #20231f;
+  --paper: #f5f0e5;
+  --red: #e84431;
+  --blue: #2154a4;
+  --yellow: #f3c640;
+  --line: rgba(32, 35, 31, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(2rem, 8vw, 6.5rem) 1.25rem 2rem;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, rgba(245, 240, 229, 0.3), var(--paper) 75%);
+  content: '';
+}
+
+h1 {
+  max-width: 660px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+}
+
+.version {
+  max-width: 660px;
+  margin: 0 auto 1.5rem;
+  
+}
+
+.mesures {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 660px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: #fffdf7;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.mesures::before {
+  position: absolute;
+  top: -0.75rem;
+  right: 1.25rem;
+  padding: 0.1rem 0.5rem;
+  background: var(--yellow);
+  content: 'CONVERTISSEUR';
+  color: var(--ink);
+  font: 7000 0.65rem 'Space Grotesk', sans-serif;
+  letter-spacing: 0.08em;
+  border: 2px solid var(--ink);
+  font-weight: bold;
+}
+
+.mesures p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.8rem 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  outline: none;
+  background: #fff;
+  color: var(--ink);
+  font: 500 1.2rem 'DM Mono', monospace;
+  transition: box-shadow 150ms ease, border-color 150ms ease;
+}
+
+input:focus {
+  border-color: var(--blue);
+  box-shadow: 3px 3px 0 var(--blue);
+}
+
+input::placeholder {
+  color: #a6a397;
+}
+
+#resultat {
+  background: #f2eddd;
+  color: var(--blue);
+}
+
+#convertir {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.75rem 1.1rem;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--red);
+  box-shadow: 3px 3px 0 var(--ink);
+  color: white;
+  cursor: pointer;
+  font: 700 0.85rem 'Space Grotesk', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+#convertir:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+#convertir:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+#convertir:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.resultat {
+  max-width: 660px;
+  min-height: 2rem;
+  margin: 1.5rem auto;
+}
+
+footer {
+  position: relative;
+  max-width: 660px;
+  margin: 3.5rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--ink);
+  background: var(--yellow);
+  box-shadow: 5px 5px 0 var(--ink);
+  color: var(--ink);
+  font: 500 0.8rem/1.8 'DM Mono', monospace;
+}
+
+footer::before {
+  position: absolute;
+  top: -0.75rem;
+  left: 1.25rem;
+  padding: 0.1rem 0.5rem;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  content: 'À DÉCOUVRIR';
+  font: 700 0.65rem 'Space Grotesk', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+footer a {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  font: 700 0.75rem 'Space Grotesk', sans-serif;
+  text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+footer a::after {
+  margin-left: 0.45rem;
+  content: '↗';
+  font-size: 1rem;
+}
+
+footer a:hover {
+  transform: translate(2px, 2px);
+  background: var(--blue);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+footer a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding-top: 3rem;
+  }
+
+  .mesures {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
